@@ -2,11 +2,51 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Data Lovers</title>
+    <title>Data Lover s</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <header><img src="./imagenes/portada.jpg" alt="portada" class="portada"></header>
+    </div>
+    <nav>
+      <button type="button" id="personajes" class="personajes" name="personajes">PERSONAJES</button>
+      <button type="button" id="libros" class="libros" name="libros">LIBROS</button>
+      <button type="button" id="hechizos" class="hechizos" name="hechizos">HECHIZOS</button>
+      <button type="button" id="datoscuriosos" class="datoscuriosos" name="datoscuriosos">DATOS CURIOSOS</button>
+      <button type="button" id="pociones" class="pociones" name="pociones">POCIONES</button>
+    </nav>
+    <asaid>
+      <section class="boxAside">
+      <details id="gender" class="gender"> <!-- se despliega -->
+        <summary>Genero</summary> <!-- titulo de despliegue -->
+        <section class="filterBox">
+            <label><input type="radio" value="Male" class="Male" name="filter">Masculino1<br></label><br>
+            <label><input type="radio" value="Female" class="Female" name="filter">Femenino</label><br>
+      </section>
+    </details>
+  </section>
+      <section class="boxAside">
+      <details id="House" class="House">
+          <summary>Casa de estudio</summary>
+          <section class="filterBox">
+            <label><input type="radio" value="Gryffindor" class="Gryffindor" name="filter">Gryffindor</label><br>
+            <label><input type="radio" value="Slytherin" class="Slytherin" name="filter">Slytherin</label><br>
+            <label><input type="radio" value="Hafflepuff" class="Hafflepuff" name="filter">Hafflepuff</label><br>
+            <label><input type="radio" value="Ravenclaw" class="Ravenclaw" name="filter">Ravenclaw</label><br>
+      </section>
+      </details>
+    </section>
+
+
+    </asaid>
+    <main>
+
+    </main>
+
+    <footer>
+
+    </footer>
     <script src="main.js" type="module"></script>
   </body>
 </html>
