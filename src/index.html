@@ -9,7 +9,8 @@
     <div id="root">
       <header><img src="./imagenes/portada.jpg" alt="portada" class="portada"></header>
     </div>
-    <nav>
+    <div id="contenedordecajas" class="contenedordecajas">
+    <nav id="nav" class="nav">
       <button type="button" id="characters" class="personajes" name="personajes">PERSONAJES</button>
       <button type="button" id="libros" class="libros" name="libros">LIBROS</button>
       <button type="button" id="hechizos" class="hechizos" name="hechizos">HECHIZOS</button>
@@ -20,30 +21,26 @@
       <section class="boxAside">
       <details id="gender" class="gender"> <!-- se despliega -->
         <summary>Género</summary> <!-- titulo de despliegue -->
-        <section class="filterBox">
-            <label><input type="radio" value="Male" class="Male" name="filter">Masculino<br></label><br>
+        <section class="filtergender">
+            <label><input type="radio" value="Male" class="Male" name="filter">Masculino</label><br>
             <label><input type="radio" value="Female" class="Female" name="filter">Femenino</label><br>
-      </section>
-    </details>
-  </section>
-      <section class="boxAside">
+        </section>
+       </details>
       <details id="House" class="House">
           <summary>Casa de estudio</summary>
-          <section class="filterBox">
+          <section class="filterhouse">
             <label><input type="radio" value="Gryffindor" class="Gryffindor" name="filter">Gryffindor</label><br>
             <label><input type="radio" value="Slytherin" class="Slytherin" name="filter">Slytherin</label><br>
             <label><input type="radio" value="Hafflepuff" class="Hafflepuff" name="filter">Hafflepuff</label><br>
             <label><input type="radio" value="Ravenclaw" class="Ravenclaw" name="filter">Ravenclaw</label><br>
-      </section>
+          </section>
       </details>
     </section>
-
-
     </asaid>
     <main id="main" class="main">
-    
-    </main>
 
+    </main>
+  </div>
     <footer>
 
     </footer>
