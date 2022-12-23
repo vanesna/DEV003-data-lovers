@@ -4,38 +4,35 @@
     <meta charset="utf-8">
     <title>Data Lover s</title>
     <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.cdnfonts.com/css/harry-potter" rel="stylesheet">
   </head>
   <body>
     <div id="root">
-      <header><img src="./imagenes/portada.jpg" alt="portada" class="portada"></header>
+      <header alt="portada" class="portada"> HARRY POTTER </header>
     </div>
     <div id="contenedordecajas" class="contenedordecajas">
     <nav id="nav" class="nav">
-      <button type="button" id="characters" class="personajes" name="personajes">PERSONAJES</button>
-      <button type="button" id="libros" class="libros" name="libros">LIBROS</button>
-      <button type="button" id="hechizos" class="hechizos" name="hechizos">HECHIZOS</button>
-      <button type="button" id="datoscuriosos" class="datoscuriosos" name="datoscuriosos">DATOS CURIOSOS</button>
-      <button type="button" id="pociones" class="pociones" name="pociones">POCIONES</button>
+      <button type="button" id="home" class="home" name="home">Home</button>
+      <button type="button" id="characters" class="personajes" name="personajes">Characters</button>
+      <button type="button" id="books" class="books" name="books">Books</button>
+      <button type="button" id="spells" class="spells" name="spells">Spells</button>
+      <button type="button" id="pociones" class="pociones" name="pociones">Potions</button>
     </nav>
     <asaid>
-      <section class="boxAside">
-      <details id="gender" class="gender"> <!-- se despliega -->
-        <summary>Género</summary> <!-- titulo de despliegue -->
-        <section class="filtergender">
-            <label><input type="radio" value="Male" class="Male" name="filter">Masculino</label><br>
-            <label><input type="radio" value="Female" class="Female" name="filter">Femenino</label><br>
-        </section>
-       </details>
-      <details id="House" class="House">
-          <summary>Casa de estudio</summary>
-          <section class="filterhouse">
-            <label><input type="radio" value="Gryffindor" class="Gryffindor" name="filter">Gryffindor</label><br>
-            <label><input type="radio" value="Slytherin" class="Slytherin" name="filter">Slytherin</label><br>
-            <label><input type="radio" value="Hafflepuff" class="Hafflepuff" name="filter">Hafflepuff</label><br>
-            <label><input type="radio" value="Ravenclaw" class="Ravenclaw" name="filter">Ravenclaw</label><br>
-          </section>
-      </details>
-    </section>
+      <section class="boxAside" id="pantallapersonajes">
+        <label for="gender">Gender</label>
+        <select name="gender">
+          <option value="value1">Female</option>
+          <option value="value2" >Male</option>
+        </select>
+        <label for="filterhouse">House</label>
+        <select name="filterhouse">
+          <option value="value1">Gryffindor</option>
+          <option value="value1">Slytherin</option>
+          <option value="value1">Hafflepuff</option>
+          <option value="value1">Ravenclaw</option>
+        </select>
+      </section>
     </asaid>
     <main id="main" class="main">
 
