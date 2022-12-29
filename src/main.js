@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-//import { example } from './data.js';
+import { filterGender } from './data.js';
 // import data from './data/lol/lol.js';
 import data from './data/harrypotter/data.js';
 // import data from './data/rickandmorty/rickandmorty.js';
@@ -13,20 +13,19 @@ import data from './data/harrypotter/data.js';
   document.getElementById("pantalladelibros").style.display = "none";
 }
 */
+
+let allcharacters = [];
+
+let nameList=""; 
+
 ocultapersonajes();
-document.getElementById("characters").addEventListener("click",aparecepersonajes);
 
 function ocultapersonajes(){
   document.getElementById("pantallapersonajes").style.display="none";
 }
-function aparecepersonajes(){
-  document.getElementById("pantallapersonajes").style.display="block";
-}
-let allcharacters = [];
-
-let nameList="";
 
 document.getElementById("characters").addEventListener("click",showCharacters);
+
 function mapData(){
 
   const dataCharacters = data.characters;
@@ -36,12 +35,45 @@ function mapData(){
   //console.log(names);
 
 }
-// seccion de personajes
+
+
 
 function showCharacters(){
-  nameList=document.getElementById("main");
+  document.getElementById("pantallapersonajes").style.display="block";
+
+  nameList=document.querySelector("#main");
 
   allcharacters.forEach(function(data){
+    //document.querySelector("#main").innerHTML+"<main>${nameList}</main>";
+
+    const linew= document.createElement("p");
+    const contenido = document.createTextNode( "Name: " + data.name + " Date of birth: " + data.birth +  " Specie :" + data.species +  " House: " + data.house + " Gender " + data.gender);
+    nameList.appendChild(linew); 
+    nameList.appendChild(contenido);
+    //linew.appendChild(contenido)
+  })
+
+}
+
+mapData();
+//filterGender(allcharacters);
+
+const filterSelected = document.getElementById("gender");
+//console.log(filterSelected);
+
+filterSelected.addEventListener("change", function (){
+  nameList.innerHTML = "";
+  filterGender(allcharacters, filterSelected.value);
+  showResults(filterGender);
+  
+});
+
+function showResults(nuevoArray){
+  //document.getElementById("pantallapersonajes").style.display="none";
+
+  nameList=document.getElementById("main");
+
+  nuevoArray.forEach(function(data){
     const linew= document.createElement("p");
     const contenido = document.createTextNode( "Name: " + data.name + " Date of birth: " + data.birth +  " Specie :" + data.species +  " House: " + data.house + " Gender " + data.gender);
     nameList.appendChild(linew);
@@ -49,25 +81,3 @@ function showCharacters(){
   })
 
 }
-
-mapData();
-
-document.getElementById("gender").addEventListener("change", gendermale);
-const genderm = allcharacters.filter(function(males) {
-  return males.gender === "Male";
-
-})
-let maleList="";
-//console.log(genderm);
-function gendermale (){
-  maleList=document.getElementById("main");
-
-  allcharacters.forEach(function(data){
-    const linew= document.createElement("p");
-    const contenido = document.createTextNode( "Name: " + data.name +  " Specie :" + data.species +  " House: " + data.house + " Gender " + data.gender);
-    maleList.appendChild(linew);
-    maleList.appendChild(contenido);
-  })
-
-}
-gendermale();
