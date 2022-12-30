@@ -59,10 +59,10 @@ const genderm = allcharacters.filter(function(males) {
 })
 let maleList="";
 //console.log(genderm);
-function gendermale (){
+function gendermale(){
   maleList=document.getElementById("main");
 
-  allcharacters.forEach(function(data){
+  allcharacters.forEach(function(data) {
     const linew= document.createElement("p");
     const contenido = document.createTextNode( "Name: " + data.name +  " Specie :" + data.species +  " House: " + data.house + " Gender " + data.gender);
     maleList.appendChild(linew);
