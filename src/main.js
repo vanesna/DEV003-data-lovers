@@ -8,7 +8,6 @@ import data from './data/harrypotter/data.js';
 
 /*function characters(){
   posActual = 0;
-
   document.getElementById("pantallapersonajes").style.display = "block";
   document.getElementById("pantalladelibros").style.display = "none";
 }
@@ -71,13 +70,9 @@ filterSelected.addEventListener("change", function (){
 function showResults(nuevoArray){
   //document.getElementById("pantallapersonajes").style.display="none";
 
-})
-let maleList="";
-//console.log(genderm);
-function gendermale (){
-  maleList=document.getElementById("main");
+  nameList=document.getElementById("main");
 
-  allcharacters.forEach(function(data){
+  nuevoArray.forEach(function(data){
     const linew= document.createElement("p");
     const contenido = document.createTextNode( "Name: " + data.name + " Date of birth: " + data.birth +  " Specie :" + data.species +  " House: " + data.house + " Gender " + data.gender);
     nameList.appendChild(linew);
