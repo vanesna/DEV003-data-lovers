@@ -1,83 +1,80 @@
 /* eslint-disable no-unused-vars */
-import { filterGender } from './data.js';
+import { filterGender, filterHouse } from './data.js';
 // import data from './data/lol/lol.js';
 import data from './data/harrypotter/data.js';
-// import data from './data/rickandmorty/rickandmorty.js';
 
-//console.log(example, data);
 
-/*function characters(){
-  posActual = 0;
+//let allcharacters = [];
+const dataCharacters = data.characters;
 
-  document.getElementById("pantallapersonajes").style.display = "block";
-  document.getElementById("pantalladelibros").style.display = "none";
-}
-*/
+const nameList=document.querySelector("#main");
 
-let allcharacters = [];
-
-let nameList=""; 
 
 ocultapersonajes();
 
 function ocultapersonajes(){
   document.getElementById("pantallapersonajes").style.display="none";
+  
 }
 
-document.getElementById("characters").addEventListener("click",showCharacters);
 
-function mapData(){
+//Botón personajes
+document.getElementById("characters").addEventListener("click",function(){
+  showCharacters(dataCharacters);
+});
+//console.log(dataCharacters);
 
-  const dataCharacters = data.characters;
+
+
+//Crea un arreglo con los personajes y sus datos
+/*function mapData(){
 
   allcharacters = dataCharacters.map(({name,birth,species,house, gender}) => ({name,birth,species,house, gender}));
+  //verPersonajes();
+  console.log(allcharacters);
 
-  //console.log(names);
-
-}
+}*/
 
 
 
-function showCharacters(){
+//Crea la lista con los personajes
+function showCharacters(data){
   document.getElementById("pantallapersonajes").style.display="block";
+  
+  //allcharacters.forEach(function(data){
 
-  nameList=document.querySelector("#main");
-
-  allcharacters.forEach(function(data){
-    //document.querySelector("#main").innerHTML+"<main>${nameList}</main>";
-
-    const linew= document.createElement("p");
-    const contenido = document.createTextNode( "Name: " + data.name + " Date of birth: " + data.birth +  " Specie :" + data.species +  " House: " + data.house + " Gender " + data.gender);
-    nameList.appendChild(linew); 
-    nameList.appendChild(contenido);
-    //linew.appendChild(contenido)
-  })
-
+  data.forEach((charac) => {
+    const line = document.createElement('li');
+    const content = document.createTextNode( "Name: " + charac.name + ", Date of birth: " + charac.birth +  ", Specie :" + charac.species +  ", House: " + charac.house + ", Gender: " + charac.gender);
+    line.appendChild(content); 
+    nameList.appendChild(line);
+  });
 }
 
-mapData();
-//filterGender(allcharacters);
+
+//mapData();
 
 const filterSelected = document.getElementById("gender");
 //console.log(filterSelected);
 
 filterSelected.addEventListener("change", function (){
   nameList.innerHTML = "";
-  filterGender(allcharacters, filterSelected.value);
-  showResults(filterGender);
-  
+  if(filterSelected.value==="Selecciona")
+    showCharacters(dataCharacters);
+  else
+    showCharacters(filterGender(dataCharacters, filterSelected.value));
+
 });
 
-function showResults(nuevoArray){
-  //document.getElementById("pantallapersonajes").style.display="none";
+const houseSelected = document.getElementById("filterhouse");
+//console.log(filterSelected);
 
-  nameList=document.getElementById("main");
+houseSelected.addEventListener("change", function (){
+  nameList.innerHTML = "";
+  if(houseSelected.value==="Selecciona")
+    showCharacters(dataCharacters);
+  else
+    showCharacters(filterHouse(dataCharacters, houseSelected.value));
 
-  nuevoArray.forEach(function(data){
-    const linew= document.createElement("p");
-    const contenido = document.createTextNode( "Name: " + data.name + " Date of birth: " + data.birth +  " Specie :" + data.species +  " House: " + data.house + " Gender " + data.gender);
-    nameList.appendChild(linew);
-    nameList.appendChild(contenido);
-  })
+});
 
-}
