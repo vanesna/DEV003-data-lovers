@@ -29,6 +29,8 @@ document.getElementById("characters").addEventListener("click",function(){
 //Crea un arreglo con los personajes y sus datos
 /*function mapData(){
 
+//Crea un arreglo con los personajes y sus datos
+/*function mapData(){
   allcharacters = dataCharacters.map(({name,birth,species,house, gender}) => ({name,birth,species,house, gender}));
   //verPersonajes();
   console.log(allcharacters);
@@ -46,7 +48,7 @@ function showCharacters(data){
   data.forEach((charac) => {
     const line = document.createElement('li');
     const content = document.createTextNode( "Name: " + charac.name + ", Date of birth: " + charac.birth +  ", Specie :" + charac.species +  ", House: " + charac.house + ", Gender: " + charac.gender);
-    line.appendChild(content); 
+    line.appendChild(content); // para que aparezca lo creado
     nameList.appendChild(line);
   });
 }
