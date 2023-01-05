@@ -7,16 +7,18 @@
     <link href="https://fonts.cdnfonts.com/css/harry-potter" rel="stylesheet">
   </head>
   <body>
+    <div id="particles-js"></div>
     <div id="root">
-      <header alt="portada" class="portada"> HARRY POTTER </header>
+      <header alt="portada" class="portada"> <img src="./imagenes/dobby-harry-potter.png" alt="harrydibujo" width=120px > HARRY POTTER</header>
+
     </div>
     <div id="contenedordecajas" class="contenedordecajas">
     <nav id="nav" class="nav">
-      <button type="button" id="home" class="home" name="home">Home</button>
-      <button type="button" id="characters" class="personajes" name="personajes">Characters</button>
-      <button type="button" id="books" class="books" name="books">Books</button>
-      <button type="button" id="spells" class="spells" name="spells">Spells</button>
-      <button type="button" id="pociones" class="pociones" name="pociones">Potions</button>
+      <button type="button" id="home" class="btn" name="home"><span>Home</span></button>
+      <button type="button" id="characters" class="btn" name="personajes">Characters</button>
+      <button type="button" id="books" class="btn" name="books">Books</button>
+      <button type="button" id="spells" class="btn" name="spells">Spells</button>
+      <button type="button" id="pociones" class="btn" name="pociones">Potions</button>
     </nav>
     <asaid>
       <section class="boxAside" id="pantallapersonajes">
@@ -43,6 +45,9 @@
     <footer>
 
     </footer>
+
+    <script src="./JS/particles.min.js"></script>
+    <script src="JS/app.js"></script>
     <script src="main.js" type="module"></script>
   </body>
 </html>

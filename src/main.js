@@ -44,7 +44,7 @@ function showCharacters(data){
   data.forEach((charac) => {
     const line = document.createElement('li');
     const content = document.createTextNode( "Name: " + charac.name + ", Date of birth: " + charac.birth +  ", Specie :" + charac.species +  ", House: " + charac.house + ", Gender: " + charac.gender);
-    line.appendChild(content);
+    line.appendChild(content); // para que aparezca lo creado
     nameList.appendChild(line);
   });
 }
