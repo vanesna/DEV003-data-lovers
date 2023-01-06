@@ -9,8 +9,7 @@
   <body>
     <div id="particles-js"></div>
     <div id="root">
-      <header alt="portada" class="portada"> <img src="./imagenes/dobby-harry-potter.png" alt="harrydibujo" width=120px > HARRY POTTER</header>
-
+      <header alt="portada" class="portada"> <img src="./imagenes/dobby-harry-potter.png" alt="harrydibujo" width=80px > HARRY POTTER</header>
     </div>
     <div id="contenedordecajas" class="contenedordecajas">
     <nav id="nav" class="nav">
@@ -20,32 +19,54 @@
       <button type="button" id="spells" class="btn" name="spells">Spells</button>
       <button type="button" id="pociones" class="btn" name="pociones">Potions</button>
     </nav>
-    <asaid>
+    <asaid id="cajadefiltros">
       <section class="boxAside" id="pantallapersonajes">
-        <label for="gender">Gender</label>
+        <label for="gender">Gender:  </label>
         <select name="gender" id="gender">
-          <option value="Selecciona" selected>Selecciona</option>
+          <option value="Selected" selected>Selected</option>
           <option value="Female">Female</option>
           <option value="Male">Male</option>
         </select>
-        <label for="filterhouse">House</label>
+        <label for="filterhouse">House:  </label>
         <select name="filterhouse" id="filterhouse">
-          <option value="Selecciona" selected>Selecciona</option>
+          <option value="Selected" selected>Selected</option>
           <option value="Gryffindor">Gryffindor</option>
           <option value="Slytherin">Slytherin</option>
           <option value="Hufflepuff">Hufflepuff</option>
           <option value="Ravenclaw">Ravenclaw</option>
         </select>
       </section>
+      <section class="boxAside" id="filtrobooks">
+      <label for="Sort"> Ordenar por: </label>
+      <select name="Sort" id="Sort">
+        <option value="Selected" selected>Selected</option>
+        <option value="Oldest">Oldest</option>
+        <option valude="Newest">Newest</option>
+      </select>
+    </section>
+
     </asaid>
     <main id="main" class="main">
+    <div id="cajaHome" class="cajahome">
+      <h2>¡Welcome Potterhead!</h2>
+      <h3>Learn some amazing facts about Harry Potter and Voldemort's wands in the picture below
+      </h3>
+      <div id="imghome" class="Home">
+        <img src="./imagenes/harrypotterhome.jpg" class="harryhome" alt="harryhome" ><br>
+        <div class="txt" id="txt">
+          <h3>Tom Marvolo Riddle known as Lord Voldemort is Harry's deadly enemy, it is discovered in book 7 that both have twin wands and cannot hurt each other.</h3>
+        </div>
+      </div>
+    </div>
+      <div id="characterscontenido" class="characterscontenido">
 
+      </div>
     </main>
-  </div>
-    <footer>
-
+    <footer class="footer">
+      Created by <a href="https://github.com/vanesna"target="_blank">@vanesna</a>
+      & <a href="https://github.com/patriciact29"target="_blank">@patriciact29</a>
     </footer>
-
+  </div>
     <script src="./JS/particles.min.js"></script>
     <script src="JS/app.js"></script>
     <script src="main.js" type="module"></script>

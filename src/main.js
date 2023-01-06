@@ -4,41 +4,35 @@ import { filterGender, filterHouse } from './data.js';
 import data from './data/harrypotter/data.js';
 
 
-//let allcharacters = [];
 const dataCharacters = data.characters;
+const dataBooks = data.books;
+const nameList=document.querySelector("#characterscontenido");
 
-const nameList=document.querySelector("#main");
-
-
-ocultapersonajes();
-
-function ocultapersonajes(){
+//boton home
+document.getElementById("home").addEventListener("click",function(){
+  showhome();
+});
+function showhome(){
+  nameList.innerHTML="";
   document.getElementById("pantallapersonajes").style.display="none";
+  document.getElementById("filtrobooks").style.display="none";
+  document.getElementById("cajaHome").style.display="block";
 
 }
-
-
 //Botón personajes
 document.getElementById("characters").addEventListener("click",function(){
   showCharacters(dataCharacters);
+  document.getElementById("cajaHome").style.display="none";
+
 });
 //console.log(dataCharacters);
 
-
-
-//Crea un arreglo con los personajes y sus datos
-/*function mapData(){
-  allcharacters = dataCharacters.map(({name,birth,species,house, gender}) => ({name,birth,species,house, gender}));
-  //verPersonajes();
-  console.log(allcharacters);
-}*/
-
-
-
 //Crea la lista con los personajes
 function showCharacters(data){
+  document.getElementById("cajadefiltros").style.display="block";
   document.getElementById("pantallapersonajes").style.display="block";
-
+  document.getElementById("filtrobooks").style.display="none";
+  nameList.innerHTML="";
   //allcharacters.forEach(function(data){
 
   data.forEach((charac) => {
@@ -49,15 +43,12 @@ function showCharacters(data){
   });
 }
 
-
-//mapData();
-
 const filterSelected = document.getElementById("gender");
 //console.log(filterSelected);
 
 filterSelected.addEventListener("change", function (){
   nameList.innerHTML = "";
-  if(filterSelected.value==="Selecciona")
+  if(filterSelected.value==="Selected")
     showCharacters(dataCharacters);
   else
     showCharacters(filterGender(dataCharacters, filterSelected.value));
@@ -69,9 +60,31 @@ const houseSelected = document.getElementById("filterhouse");
 
 houseSelected.addEventListener("change", function (){
   nameList.innerHTML = "";
-  if(houseSelected.value==="Selecciona")
+  if(houseSelected.value==="Selected")
     showCharacters(dataCharacters);
   else
     showCharacters(filterHouse(dataCharacters, houseSelected.value));
 
 });
+
+//boton libros
+document.getElementById("books").addEventListener("click",function(){
+  showbooks(dataBooks);
+});
+function showbooks(data){
+  nameList.innerHTML="";
+  document.getElementById("cajadefiltros").style.display="block";
+  document.getElementById("pantallapersonajes").style.display="none";
+  document.getElementById("filtrobooks").style.display="block";
+  document.getElementById("cajaHome").style.display="none";
+
+
+  data.forEach((charac) => {
+    const line = document.createElement('li');
+    const content = document.createTextNode( "Title: " + charac.title + ", ReleaseDay: " + charac.releaseDay );
+    line.appendChild(content); // para que aparezca lo creado
+    nameList.appendChild(line);
+  });
+}
+
+
