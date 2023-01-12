@@ -200,4 +200,8 @@ button {
   font-family: cursive;
   list-style-image: url(./imagenes/SOMBRERO1.png);
 }
+.design{
+  background-color: aqua;
+  display: flex;
 
+}

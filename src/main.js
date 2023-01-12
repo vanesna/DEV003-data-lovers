@@ -80,10 +80,11 @@ function showbooks(data){
 
 
   data.forEach((charac) => {
-    const line = document.createElement('li');
+    const line = document.createElement('p');
     const content = document.createTextNode( "Title: " + charac.title + ", ReleaseDay: " + charac.releaseDay );
     line.appendChild(content); // para que aparezca lo creado
     nameList.appendChild(line);
+    line.setAttribute("class", "design");
   });
 }
 
