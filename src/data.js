@@ -3,7 +3,7 @@
 //Filtro por género
 export const filterGender = (dataCharacters,filterSelected) => {
   const nuevoArray = dataCharacters.filter((charac) => charac.gender === filterSelected); 
-  //console.log(nuevoArray);
+  console.log(nuevoArray);
   return nuevoArray;
 }
 
@@ -14,3 +14,4 @@ export const filterHouse = (dataCharacters,houseSelected) => {
   return nuevoArray;
   
 }
+
