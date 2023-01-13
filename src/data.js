@@ -2,9 +2,14 @@
 
 //Filtro por género
 export const filterGender = (dataCharacters,filterSelected) => {
-  const nuevoArray = dataCharacters.filter((charac) => charac.gender === filterSelected); 
+  const filteredArray = dataCharacters.filter((charac) => charac.gender === filterSelected); 
+  console.log(filteredArray);
+  const newArray = dataCharacters.filter((charac) => charac.gender === "Female Male");
+  console.log(newArray);
+  const nuevoArray = filteredArray.concat(newArray); 
   console.log(nuevoArray);
   return nuevoArray;
+  
 }
 
 //Filtro por casa de estudio

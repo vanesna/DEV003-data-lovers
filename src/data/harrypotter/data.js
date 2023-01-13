@@ -2379,7 +2379,7 @@ export default {
       "death": "2 May, 1998",
       "species": "Humans",
       "ancestry": null,
-      "gender": "Females, Males",
+      "gender": "Female Male",
       "hair_color": null,
       "eye_color": null,
       "wand": null,
