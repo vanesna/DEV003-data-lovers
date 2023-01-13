@@ -35,14 +35,19 @@ function showCharacters(data){
   nameList.innerHTML="";
   //allcharacters.forEach(function(data){
 
-  data.forEach((charac) => {
+  for(let i=0; i<data.length; i++){
+    //const charac = dataCharacters[i];
+
+
+    //data.forEach((charac) => {
     const line = document.createElement('li');
-    const content = document.createTextNode( "Name: " + charac.name + ", Date of birth: " + charac.birth +  ", Specie :" + charac.species +  ", House: " + charac.house + ", Gender: " + charac.gender);
+    const content = document.createTextNode( "Name: " + data[i].name + ", Date of birth: " + data[i].birth +  ", Specie :" + data[i].species +  ", House: " + data[i].house + ", Gender: " + data[i].gender);
     line.appendChild(content); // para que aparezca lo creado
     nameList.appendChild(line);
-  });
+    //content.sort(charac.name);
+    //onsole.log(content);
+  }
 }
-
 const filterSelected = document.getElementById("gender");
 //console.log(filterSelected);
 
@@ -88,8 +93,8 @@ function showbooks(){
   let divBack="";
   let lineBack="";
 
-  let releaseDay = [];
-  let description = [];
+  const releaseDay = [];
+  const description = [];
   let covers = [];
 
   covers = ["./imagenes/book1.jpg",
@@ -101,22 +106,6 @@ function showbooks(){
     "./imagenes/book7.jpg",
     "./imagenes/book8.jpg"];
 
-
-  releaseDay = dataBooks.map(({releaseDay}) => ({releaseDay}));
-  //releaseDay = Object.entries(dataBooks.releaseDay).map(i=>i[0]);
-  description = dataBooks.map(({description}) => ({description}));
-  //description = Object.entries(dataBooks.description).map(i=>i[0]);
-  //const descripcion = Object.values(description);
-  //console.log(descripcion);
-
-  console.log(covers);
-  console.log(releaseDay);
-  console.log(description);
-
-  for (const property in dataBooks) {
-    //console.log(`${property}: ${dataBooks[property]}`);
-  }
-
   for(let i=0; i<covers.length; i++){
 
     booksBox =document.createElement('div');
@@ -127,27 +116,21 @@ function showbooks(){
     img.setAttribute("src",covers[i]);
 
     divFront.append(img); // para que aparezca lo creado
+    divBack = document.createElement('div');
+    divBack.setAttribute("class","bookDesignBack");
+    lineBack = document.createElement('p');
+    //const contentBack = document.createTextNode("ReleaseDay: " + book1.releaseDay + "Description" + book1.description);
+    //const newRelease = JSON.stringify({ releaseDay });
+    lineBack.append("Release Day: " + dataBooks[i].releaseDay + " Description: " + dataBooks[i].description);
+    divBack.append(lineBack); // para que aparezca lo creado
 
-    for(let j=0; j<description.length; j++) {
+    booksBox.append(divFront, divBack);
+    nameList.append(booksBox);
 
-      divBack = document.createElement('div');
-      divBack.setAttribute("class","bookDesignBack");
-      lineBack = document.createElement('p');
-      //const contentBack = document.createTextNode("ReleaseDay: " + book1.releaseDay + "Description" + book1.description);
-      //const newRelease = JSON.stringify({ releaseDay });
-      lineBack.append("Release Day: " + releaseDay[j] + " Description: " + description[j]);
-      divBack.append(lineBack); // para que aparezca lo creado
-
-      booksBox.append(divFront, divBack);
-      nameList.append(booksBox);
-
-      console.log(booksBox);
-
-    }
+    //console.log(booksBox);
   }
-
-
 }
+
 /*
   dataBooks.forEach((book) => {
 

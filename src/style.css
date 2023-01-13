@@ -2,19 +2,17 @@ body{
   background:black;
   background-size: 100% 100%;
 }
-#particles-js{
-height: 100vh;
-width: 100%;
-position: fixed;
-z-index: -1;
 
-}
 .portada{
   font-family: 'Harry Potter', sans-serif;
   color:aliceblue;
   font-size: 80px;
   text-align: center;
   padding: 10px;
+
+}
+.portada img{
+  width: 80px;
 }
 
 button {
@@ -257,4 +255,3 @@ button {
   padding-right: 7px;
 }
 
-}
