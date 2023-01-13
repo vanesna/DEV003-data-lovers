@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { filterGender, filterHouse} from './data.js';
+import { filterGender, filterHouse } from './data.js';
 // import data from './data/lol/lol.js';
 import data from './data/harrypotter/data.js';
 
@@ -43,9 +43,9 @@ function showCharacters(data){
     const content = document.createTextNode( "Name: " + data[i].name + ", Date of birth: " + data[i].birth +  ", Specie :" + data[i].species +  ", House: " + data[i].house + ", Gender: " + data[i].gender);
     line.appendChild(content); // para que aparezca lo creado
     nameList.appendChild(line);
+    //content.sort(charac.name);
+    //onsole.log(content);
   }
-
-
 }
 const filterSelected = document.getElementById("gender");
 //console.log(filterSelected);
@@ -53,7 +53,7 @@ const filterSelected = document.getElementById("gender");
 filterSelected.addEventListener("change", function (){
   nameList.innerHTML = "";
   if(filterSelected.value==="Selected")
-    showCharacters(dataCharacters)
+    showCharacters(dataCharacters);
   else
     showCharacters(filterGender(dataCharacters, filterSelected.value));
 
@@ -92,8 +92,6 @@ function showbooks(){
   let divBack="";
   let lineBack="";
 
-  const releaseDay = [];
-  const description = [];
   let covers = [];
 
   covers = ["./imagenes/book1.jpg",
@@ -109,17 +107,16 @@ function showbooks(){
 
     booksBox =document.createElement('div');
     booksBox.setAttribute("class","booksBox");
+    
     divFront = document.createElement('div');
     divFront.setAttribute("class","bookDesignFront");
     img = document.createElement('img');
     img.setAttribute("src",covers[i]);
-
     divFront.append(img); // para que aparezca lo creado
+    
     divBack = document.createElement('div');
     divBack.setAttribute("class","bookDesignBack");
     lineBack = document.createElement('p');
-    //const contentBack = document.createTextNode("ReleaseDay: " + book1.releaseDay + "Description" + book1.description);
-    //const newRelease = JSON.stringify({ releaseDay });
     lineBack.append("Release Day: " + dataBooks[i].releaseDay + " Description: " + dataBooks[i].description);
     divBack.append(lineBack); // para que aparezca lo creado
 
@@ -130,33 +127,3 @@ function showbooks(){
   }
 }
 
-/*
-  dataBooks.forEach((book) => {
-
-    booksBox =document.createElement('div');
-    booksBox.setAttribute("class","booksBox");
-    divFront = document.createElement('div');
-    divFront.setAttribute("class","bookDesignFront");
-    img = document.createElement('img');
-    img.src = "./imagenes/book1.jpg"
-
-
-    divFront.append(img); // para que aparezca lo creado
-    //nameList.appendChild(lineFront);
-
-
-
-    const divBack = document.createElement('div');
-    const lineBack = document.createElement('p');
-    //const contentBack = document.createTextNode("ReleaseDay: " + book1.releaseDay + "Description" + book1.description);
-    lineBack.append("Release Day: " + book.releaseDay + " Description: " + book.description);
-    divBack.appendChild(lineBack); // para que aparezca lo creado
-    //nameList.appendChild(lineBack);
-
-    divBack.setAttribute("class","bookDesignBack");
-
-    booksBox.append(divFront, divBack);
-    nameList.append(booksBox);
-
-  })
-} */

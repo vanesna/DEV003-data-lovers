@@ -8,9 +8,9 @@ describe('filterGender', () => {
   });
 
   it('returns filtro de genero', () => {
-    const dataCharacters =[{"name": "Euan Abercrombie","gender": "Male"},{"name": "Hannah Abbott's mother","gender": "Female"},{"name": "Fallen Fifty", "gender": "Female"},];
+    const dataCharacters =[{"name": "Euan Abercrombie","gender": "Male"},{"name": "Hannah Abbott's mother","gender": "Female"},{"name": "Fallen Fifty", "gender": "Female Male"},];
     const filterSelected = "Female";
-    expect(filterGender(dataCharacters,filterSelected)).toEqual([{"name": "Hannah Abbott's mother","gender": "Female"}, {"name": "Fallen Fifty", "gender": "Female"}]);
+    expect(filterGender(dataCharacters,filterSelected)).toEqual([{"name": "Hannah Abbott's mother","gender": "Female"}, {"name": "Fallen Fifty", "gender": "Female Male"}]);
   });
 });
 
