@@ -35,14 +35,18 @@ function showCharacters(data){
   nameList.innerHTML="";
 
   for(let i=0; i<data.length; i++){
+    //const charac = dataCharacters[i];
+
+
+    //data.forEach((charac) => {
     const line = document.createElement('li');
     const content = document.createTextNode( "Name: " + data[i].name + ", Date of birth: " + data[i].birth +  ", Specie :" + data[i].species +  ", House: " + data[i].house + ", Gender: " + data[i].gender);
     line.appendChild(content); // para que aparezca lo creado
     nameList.appendChild(line);
+    //content.sort(charac.name);
+    //onsole.log(content);
   }
-
 }
-
 const filterSelected = document.getElementById("gender");
 //console.log(filterSelected);
 
@@ -82,12 +86,14 @@ function showbooks(){
   document.getElementById("cajaHome").style.display="none";
 
 
-  let booksBox="";  
-  let divFront=""; 
+  let booksBox="";
+  let divFront="";
   let img="";
-  let divBack=""; 
-  let lineBack=""; 
+  let divBack="";
+  let lineBack="";
 
+  const releaseDay = [];
+  const description = [];
   let covers = [];
 
   covers = ["./imagenes/book1.jpg",
@@ -99,22 +105,16 @@ function showbooks(){
     "./imagenes/book7.jpg",
     "./imagenes/book8.jpg"];
 
-  
-  console.log(covers); 
- 
   for(let i=0; i<covers.length; i++){
 
     booksBox =document.createElement('div');
     booksBox.setAttribute("class","booksBox");
-    divFront = document.createElement('div'); 
-    divFront.setAttribute("class","bookDesignFront"); 
-    img = document.createElement('img');  
+    divFront = document.createElement('div');
+    divFront.setAttribute("class","bookDesignFront");
+    img = document.createElement('img');
     img.setAttribute("src",covers[i]);
-    
+
     divFront.append(img); // para que aparezca lo creado
-    
-   
-    
     divBack = document.createElement('div');
     divBack.setAttribute("class","bookDesignBack");
     lineBack = document.createElement('p');
@@ -122,30 +122,29 @@ function showbooks(){
     //const newRelease = JSON.stringify({ releaseDay });
     lineBack.append("Release Day: " + dataBooks[i].releaseDay + " Description: " + dataBooks[i].description);
     divBack.append(lineBack); // para que aparezca lo creado
-    
+
     booksBox.append(divFront, divBack);
     nameList.append(booksBox);
-    
-    console.log(booksBox);
 
+    //console.log(booksBox);
   }
 }
- 
+
 /*
   dataBooks.forEach((book) => {
-  
+
     booksBox =document.createElement('div');
     booksBox.setAttribute("class","booksBox");
     divFront = document.createElement('div');
     divFront.setAttribute("class","bookDesignFront");
     img = document.createElement('img');
     img.src = "./imagenes/book1.jpg"
-    
+
 
     divFront.append(img); // para que aparezca lo creado
     //nameList.appendChild(lineFront);
 
-    
+
 
     const divBack = document.createElement('div');
     const lineBack = document.createElement('p');
@@ -159,5 +158,5 @@ function showbooks(){
     booksBox.append(divFront, divBack);
     nameList.append(booksBox);
 
-  }) 
+  })
 } */
