@@ -1,23 +1,29 @@
-import { example, anotherExample } from '../src/data.js';
+
+import { filterGender, filterHouse } from '../src/data.js';
 
 
-describe('example', () => {
+describe('filterGender', () => {
   it('is a function', () => {
-    expect(typeof example).toBe('function');
+    expect(typeof filterGender).toBe('function');
   });
 
-  it('returns `example`', () => {
-    expect(example()).toBe('example');
+  it('returns filtro de genero', () => {
+    const dataCharacters =[{"name": "Euan Abercrombie","gender": "Male"},{"name": "Hannah Abbott's mother","gender": "Female"},{"name": "Fallen Fifty", "gender": "Female"},];
+    const filterSelected = "Female";
+    expect(filterGender(dataCharacters,filterSelected)).toEqual([{"name": "Hannah Abbott's mother","gender": "Female"}, {"name": "Fallen Fifty", "gender": "Female"}]);
   });
 });
 
 
-describe('anotherExample', () => {
+describe('filterHouse', () => {
   it('is a function', () => {
-    expect(typeof anotherExample).toBe('function');
+    expect(typeof filterHouse).toBe('function');
   });
 
-  it('returns `anotherExample`', () => {
-    expect(anotherExample()).toBe('OMG');
+  it('returns filtro de casas', () => {
+    const dataCharacters=[{"name": "Euan Abercrombie","house": "Gryffindor"}];
+    const houseSelected = "Gryffindor";
+    expect(filterHouse(dataCharacters,houseSelected)).toEqual([{"name": "Euan Abercrombie","house": "Gryffindor",}]);
   });
 });
+

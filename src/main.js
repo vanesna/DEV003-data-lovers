@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { filterGender, filterHouse } from './data.js';
+import { filterGender, filterHouse} from './data.js';
 // import data from './data/lol/lol.js';
 import data from './data/harrypotter/data.js';
 
@@ -43,9 +43,9 @@ function showCharacters(data){
     const content = document.createTextNode( "Name: " + data[i].name + ", Date of birth: " + data[i].birth +  ", Specie :" + data[i].species +  ", House: " + data[i].house + ", Gender: " + data[i].gender);
     line.appendChild(content); // para que aparezca lo creado
     nameList.appendChild(line);
-    //content.sort(charac.name);
-    //onsole.log(content);
   }
+
+
 }
 const filterSelected = document.getElementById("gender");
 //console.log(filterSelected);
@@ -53,7 +53,7 @@ const filterSelected = document.getElementById("gender");
 filterSelected.addEventListener("change", function (){
   nameList.innerHTML = "";
   if(filterSelected.value==="Selected")
-    showCharacters(dataCharacters);
+    showCharacters(dataCharacters)
   else
     showCharacters(filterGender(dataCharacters, filterSelected.value));
 
