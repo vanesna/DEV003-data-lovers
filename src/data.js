@@ -20,6 +20,27 @@ export const filterHouse = (dataCharacters,houseSelected) => {
   
 }
 
+export const sortBooks = (dataBooks, sortSelected) => {
+  let arraySort = [];
+  if(sortSelected === "Newest"){
+    arraySort =dataBooks.sort((a, b) => {
+      if(a.id > b.id) { // a debe ser mayor que b
+        return -1;     // a antes que b  
+      }
+      return 1;    //b antes que a
+    })} 
+
+  else if(sortSelected === "Oldest")  
+    arraySort =dataBooks.sort((a, b) => {
+      if(a.id < b.id) { //a debe ser menor que b
+        return -1; 
+      }     
+    }); 
+  //console.log(arraySort);
+  return arraySort;
+}
+
+
 /*export const order=(dataCharacters,ordercontent) => {
   const sortArray= dataCharacters.sort((a, b) => {
     if (a === b) {
