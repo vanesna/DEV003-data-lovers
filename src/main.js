@@ -1,13 +1,13 @@
 /* eslint-disable no-unused-vars */
-import { filterGender, filterHouse } from './data.js';
+import { filterGender, filterHouse, ordercharacters} from './data.js';
 // import data from './data/lol/lol.js';
 import data from './data/harrypotter/data.js';
 
 
 const dataCharacters = data.characters;
+ordercharacters(dataCharacters);
 const dataBooks = data.books;
 const nameList=document.querySelector("#characterscontenido");
-
 //boton home
 document.getElementById("home").addEventListener("click",function(){
   showhome();
@@ -25,9 +25,9 @@ document.getElementById("characters").addEventListener("click",function(){
   document.getElementById("cajaHome").style.display="none";
 
 });
-//console.log(dataCharacters);
 
 //Crea la lista con los personajes
+
 function showCharacters(data){
   document.getElementById("cajadefiltros").style.display="block";
   document.getElementById("pantallapersonajes").style.display="block";
@@ -36,17 +36,17 @@ function showCharacters(data){
 
   for(let i=0; i<data.length; i++){
     //const charac = dataCharacters[i];
-
-
-    //data.forEach((charac) => {
+    //console.log(ordercharacters);
     const line = document.createElement('li');
     const content = document.createTextNode( "Name: " + data[i].name + ", Date of birth: " + data[i].birth +  ", Specie :" + data[i].species +  ", House: " + data[i].house + ", Gender: " + data[i].gender);
     line.appendChild(content); // para que aparezca lo creado
     nameList.appendChild(line);
-    //content.sort(charac.name);
-    //onsole.log(content);
+    //console.log(content);
+
   }
 }
+
+
 const filterSelected = document.getElementById("gender");
 //console.log(filterSelected);
 
@@ -107,13 +107,13 @@ function showbooks(){
 
     booksBox =document.createElement('div');
     booksBox.setAttribute("class","booksBox");
-    
+
     divFront = document.createElement('div');
     divFront.setAttribute("class","bookDesignFront");
     img = document.createElement('img');
     img.setAttribute("src",covers[i]);
     divFront.append(img); // para que aparezca lo creado
-    
+
     divBack = document.createElement('div');
     divBack.setAttribute("class","bookDesignBack");
     lineBack = document.createElement('p');
@@ -126,4 +126,6 @@ function showbooks(){
     //console.log(booksBox);
   }
 }
+
+
 

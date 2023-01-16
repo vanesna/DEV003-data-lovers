@@ -1,5 +1,5 @@
 
-import { filterGender, filterHouse } from '../src/data.js';
+import { filterGender, filterHouse, ordercharacters} from '../src/data.js';
 
 
 describe('filterGender', () => {
@@ -27,3 +27,20 @@ describe('filterHouse', () => {
   });
 });
 
+describe('ordercharacters', ()=>{
+  it ('is a function', ()=>{
+    expect(typeof ordercharacters).toEqual('function');
+  });
+
+  it('orden de characters', () => {
+    const dataCharacters=
+    [{"name": "Euan Abercrombie"},
+      {"name": "Agnes's son"},
+      {"name": "African prince"}];
+    expect(ordercharacters(dataCharacters)).toEqual([
+      {"name": "African prince"},
+      {"name": "Agnes's son"},
+      {"name": "Euan Abercrombie"},
+    ]);
+  });
+})
