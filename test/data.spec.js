@@ -1,6 +1,10 @@
+import { filterGender, filterHouse, sortBooks, ordercharacters} from '../src/data.js';
 
-import { filterGender, filterHouse, ordercharacters} from '../src/data.js';
-
+const dataBooks=[
+  { "id": 3},
+  {"id": 1},
+  {"id": 4},
+  {"id": 2}];
 
 describe('filterGender', () => {
   it('is a function', () => {
@@ -44,3 +48,17 @@ describe('ordercharacters', ()=>{
     ]);
   });
 })
+
+describe('sort books', () => {
+  it('is a function', () => {
+    expect(typeof sortBooks).toBe('function');
+  });
+
+  it('returns libros recientes', () => {
+    expect(sortBooks(dataBooks, "Newest")).toEqual([{"id": 4}, {"id": 3}, {"id": 2}, {"id": 1}]);
+  });
+  it('returns libros antiguos', () => {
+    expect(sortBooks(dataBooks, "Oldest")).toEqual([{ "id": 1}, {"id": 2}, {"id": 3}, {"id": 4}]);
+  });
+
+});
