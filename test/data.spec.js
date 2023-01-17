@@ -1,5 +1,4 @@
-
-import { filterGender, filterHouse, sortBooks} from '../src/data.js';
+import { filterGender, filterHouse, sortBooks, ordercharacters} from '../src/data.js';
 
 const dataBooks=[
   { "id": 3},
@@ -32,6 +31,23 @@ describe('filterHouse', () => {
   });
 });
 
+describe('ordercharacters', ()=>{
+  it ('is a function', ()=>{
+    expect(typeof ordercharacters).toEqual('function');
+  });
+
+  it('orden de characters', () => {
+    const dataCharacters=
+    [{"name": "Euan Abercrombie"},
+      {"name": "Agnes's son"},
+      {"name": "African prince"}];
+    expect(ordercharacters(dataCharacters)).toEqual([
+      {"name": "African prince"},
+      {"name": "Agnes's son"},
+      {"name": "Euan Abercrombie"},
+    ]);
+  });
+})
 
 describe('sort books', () => {
   it('is a function', () => {
