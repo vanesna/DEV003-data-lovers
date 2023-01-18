@@ -73,7 +73,7 @@ houseSelected.addEventListener("change", function (){
 
 const covers = [{"id": 1, "img": "./imagenes/book1.jpg"},
   {"id": 2, "img": "./imagenes/book2.jpg"},
-  {"id": 3, "img":"/imagenes/book3.jpg"},
+  {"id": 3, "img": "./imagenes/book3.jpg"},
   {"id": 4, "img": "./imagenes/book4.jpg"},
   {"id": 5, "img": "./imagenes/book5.jpg"},
   {"id": 6, "img": "./imagenes/book6.jpg"},
