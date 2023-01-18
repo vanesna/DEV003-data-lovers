@@ -11,7 +11,16 @@ Al dar click en el botón de libros, aparecen todos los libros con portada y al 
   Boton “Statics”
 Al ingresar al botón de estadísticas los usuarios pueden visualizar cuántos personajes hay por genero.
 3.-PROTOTIPO DE ALTA FIDELIDAD
-4.-
+https://raw.githubusercontent.com/patriciact29/DEV003-data-lovers/tercerahistoria/src/imagenes/img1.png
+https://raw.githubusercontent.com/patriciact29/DEV003-data-lovers/tercerahistoria/src/imagenes/img2.png
+https://raw.githubusercontent.com/patriciact29/DEV003-data-lovers/tercerahistoria/src/imagenes/img3.png
+https://raw.githubusercontent.com/patriciact29/DEV003-data-lovers/tercerahistoria/src/imagenes/img4.png
+4.-TEST de usabilidad
+Los usuarios sugirieron que la pantalla de inicio tenga un diseño mas atractivo
+Los usuarios sugirieron que los personajes esten en cartas como el diseño de libros
+Los usuarios sugirieron que en al abrir en pantallas mas pequeñas, los botones se achiquen o se muevan visualicen como lista.
+
+
 
 
 
