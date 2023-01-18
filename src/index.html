@@ -4,46 +4,75 @@
     <meta charset="utf-8">
     <title>Data Lover s</title>
     <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.cdnfonts.com/css/harry-potter" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/c34ffdbd89.js" crossorigin="anonymous"></script>
   </head>
   <body>
+    <div class="menu2">
+    <i class="fa-sharp fa-solid fa-bars" id="btn-menu"></i>
+  </div>
     <div id="root">
-      <header><img src="./imagenes/portada.jpg" alt="portada" class="portada"></header>
+      <header alt="portada" class="portada"> <img src="./imagenes/dobby-harry-potter.png" alt="harrydibujo" > Harry Potter</header>
     </div>
     <div id="contenedordecajas" class="contenedordecajas">
+      <div class="menu">
+
+      <div id ="back-menu"></div>
     <nav id="nav" class="nav">
-      <button type="button" id="characters" class="personajes" name="personajes">PERSONAJES</button>
-      <button type="button" id="libros" class="libros" name="libros">LIBROS</button>
-      <button type="button" id="hechizos" class="hechizos" name="hechizos">HECHIZOS</button>
-      <button type="button" id="datoscuriosos" class="datoscuriosos" name="datoscuriosos">DATOS CURIOSOS</button>
-      <button type="button" id="pociones" class="pociones" name="pociones">POCIONES</button>
+      <button type="button" id="home" class="btn" name="home"><span>Home</span></button>
+      <button type="button" id="characters" class="btn" name="personajes">Characters</button>
+      <button type="button" id="books" class="btn" name="books">Books</button>
+      <button type="button" id="Statistics" class="btn" name="Statistics">Statistics</button>
     </nav>
-    <asaid>
-      <section class="boxAside">
-      <details id="gender" class="gender"> <!-- se despliega -->
-        <summary>Género</summary> <!-- titulo de despliegue -->
-        <section class="filtergender">
-            <label><input type="radio" value="Male" class="Male" name="filter">Masculino</label><br>
-            <label><input type="radio" value="Female" class="Female" name="filter">Femenino</label><br>
-        </section>
-       </details>
-      <details id="House" class="House">
-          <summary>Casa de estudio</summary>
-          <section class="filterhouse">
-            <label><input type="radio" value="Gryffindor" class="Gryffindor" name="filter">Gryffindor</label><br>
-            <label><input type="radio" value="Slytherin" class="Slytherin" name="filter">Slytherin</label><br>
-            <label><input type="radio" value="Hafflepuff" class="Hafflepuff" name="filter">Hafflepuff</label><br>
-            <label><input type="radio" value="Ravenclaw" class="Ravenclaw" name="filter">Ravenclaw</label><br>
-          </section>
-      </details>
+      </div>
+
+    <asaid id="cajadefiltros">
+      <section class="boxAside" id="pantallapersonajes">
+        <label for="gender">Gender:  </label>
+        <select name="gender" id="gender">
+          <option value="Selected" selected>Selected</option>
+          <option value="Female">Female</option>
+          <option value="Male">Male</option>
+        </select>
+        <label for="filterhouse">House:  </label>
+        <select name="filterhouse" id="filterhouse">
+          <option value="Selected" selected>Selected</option>
+          <option value="Gryffindor">Gryffindor</option>
+          <option value="Slytherin">Slytherin</option>
+          <option value="Hufflepuff">Hufflepuff</option>
+          <option value="Ravenclaw">Ravenclaw</option>
+        </select>
+      </section>
+      <section class="boxAside" id="filtrobooks">
+      <label for="Sort"> Sort by: </label>
+      <select name="Sort" id="Sort">
+        <option value="Oldest" selected>Oldest</option>
+        <option value="Newest">Newest</option>
+      </select>
     </section>
+
     </asaid>
     <main id="main" class="main">
+    <div id="cajaHome" class="cajahome">
+      <h2>¡Welcome Potterhead!</h2>
+      <h3>Learn some amazing facts about Harry Potter and Voldemort's wands in the picture below
+      </h3>
+      <div id="imghome" class="Home">
+        <img src="./imagenes/harrypotterhome.jpg" class="harryhome" alt="harryhome" ><br>
+        <div class="txt" id="txt">
+          <h3>Tom Marvolo Riddle known as Lord Voldemort is Harry's deadly enemy, it is discovered in book 7 that both have twin wands and cannot hurt each other.</h3>
+        </div>
+      </div>
+    </div>
+      <div id="characterscontenido" class="characterscontenido">
+      </div>
 
     </main>
-  </div>
-    <footer>
-
+    <footer class="footer">
+      Created by <a href="https://github.com/vanesna">@vanesna</a> and
+      <a href="https://github.com/patriciact29">@patriciact29</a>
     </footer>
+  </div>
     <script src="main.js" type="module"></script>
   </body>
 </html>
