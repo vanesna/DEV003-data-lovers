@@ -1,3 +1,31 @@
+1.-DEFINICION DEL PRODUCTO
+Se creo una pagina para Potterhead, las usuarias pueden visualizar una lista ordenada de los personajes y filtrarlos por genero o casa de estudio; tambien pueden visualizar los libros en el orden deseado, ya sea por el mas nuevo o el mas antiguo.
+2.-HISTORIAS DE USUARIOS
+-PRIMERA HISTORIA
+  Botón “Characters”
+La usuaria cuando ingrese al botón de personajes se muestra toda la lista de personajes con nombre, especie, fecha de nacimiento y casa de estudio; y pueden filtrar la lista por género o casa de estudio.
+-SEGUNDA HISTORIA
+  Botón “books”
+Al dar click en el botón de libros, aparecen todos los libros con portada y al superponer el mousse en la portada se muestra fecha de de publicación y descripción, que tenga la opción de ordenar de el más antiguo al más nuevo.
+-TERCERA HISTORIA
+  Boton “Statics”
+Al ingresar al botón de estadísticas los usuarios pueden visualizar cuántos personajes hay por genero.
+3.-PROTOTIPO DE ALTA FIDELIDAD
+https://raw.githubusercontent.com/patriciact29/DEV003-data-lovers/tercerahistoria/src/imagenes/img1.png
+https://raw.githubusercontent.com/patriciact29/DEV003-data-lovers/tercerahistoria/src/imagenes/img2.png
+https://raw.githubusercontent.com/patriciact29/DEV003-data-lovers/tercerahistoria/src/imagenes/img3.png
+https://raw.githubusercontent.com/patriciact29/DEV003-data-lovers/tercerahistoria/src/imagenes/img4.png
+4.-TEST de usabilidad
+Los usuarios sugirieron que la pantalla de inicio tenga un diseño mas atractivo
+Los usuarios sugirieron que los personajes esten en cartas como el diseño de libros
+Los usuarios sugirieron que en al abrir en pantallas mas pequeñas, los botones se achiquen o se muevan visualicen como lista.
+
+
+
+
+
+
+
 # Harry Potter
 
 Harry Potter es una serie de novelas fantásticas escrita por la autora
