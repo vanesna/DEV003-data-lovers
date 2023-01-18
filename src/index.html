@@ -5,18 +5,27 @@
     <title>Data Lover s</title>
     <link rel="stylesheet" href="style.css" />
     <link href="https://fonts.cdnfonts.com/css/harry-potter" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/c34ffdbd89.js" crossorigin="anonymous"></script>
   </head>
   <body>
+    <div class="menu2">
+    <i class="fa-sharp fa-solid fa-bars" id="btn-menu"></i>
+  </div>
     <div id="root">
       <header alt="portada" class="portada"> <img src="./imagenes/dobby-harry-potter.png" alt="harrydibujo" > Harry Potter</header>
     </div>
     <div id="contenedordecajas" class="contenedordecajas">
+      <div class="menu">
+
+      <div id ="back-menu"></div>
     <nav id="nav" class="nav">
       <button type="button" id="home" class="btn" name="home"><span>Home</span></button>
       <button type="button" id="characters" class="btn" name="personajes">Characters</button>
       <button type="button" id="books" class="btn" name="books">Books</button>
       <button type="button" id="Statistics" class="btn" name="Statistics">Statistics</button>
     </nav>
+      </div>
+
     <asaid id="cajadefiltros">
       <section class="boxAside" id="pantallapersonajes">
         <label for="gender">Gender:  </label>
@@ -56,9 +65,7 @@
       </div>
     </div>
       <div id="characterscontenido" class="characterscontenido">
-
       </div>
-
 
     </main>
     <footer class="footer">

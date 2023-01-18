@@ -19,7 +19,7 @@ export const filterHouse = (dataCharacters,houseSelected) => {
   return nuevoArray;
 
 }
-
+//ordenar libros
 export const sortBooks = (dataBooks, sortSelected) => {
   let arraySort = [];
   if(sortSelected === "Newest"){
@@ -35,13 +35,14 @@ export const sortBooks = (dataBooks, sortSelected) => {
       if(a.id < b.id) { //a debe ser menor que b
         return -1;
       }
+      return 1
     });
   //console.log(arraySort);
   return arraySort;
 }
 
 
-
+//ordenar personajes
 export const ordercharacters = (dataCharacters) => {
   let sortArray=[];
   sortArray=dataCharacters.sort((a,b) => {
@@ -54,3 +55,9 @@ export const ordercharacters = (dataCharacters) => {
   });
   return sortArray
 }
+
+//calcular
+export const Calcular =(dataCharacters, datafiltrada) =>{
+  const porcentaje= Math.round(datafiltrada.length*100/dataCharacters.length);
+  return porcentaje
+};

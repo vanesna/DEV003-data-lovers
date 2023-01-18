@@ -1,7 +1,7 @@
-import { filterGender, filterHouse, sortBooks, ordercharacters} from '../src/data.js';
+import { filterGender, filterHouse, sortBooks, ordercharacters, Calcular} from '../src/data.js';
 
 const dataBooks=[
-  { "id": 3},
+  {"id": 3},
   {"id": 1},
   {"id": 4},
   {"id": 2}];
@@ -60,5 +60,19 @@ describe('sort books', () => {
   it('returns libros antiguos', () => {
     expect(sortBooks(dataBooks, "Oldest")).toEqual([{ "id": 1}, {"id": 2}, {"id": 3}, {"id": 4}]);
   });
+  it('returns libros recientes', () => {
+    expect(sortBooks(dataBooks.reverse(), "Oldest")).toEqual([{ "id": 1}, {"id": 2}, {"id": 3}, {"id": 4}]);
+  });
+});
 
+describe('Calcular', () => {
+  it('is a function', () => {
+    expect(typeof Calcular).toBe('function');
+  });
+
+  it('returns porcentaje de personajes', () => {
+    const dataCharacters =["Emeric the Evil","Errol","Mark Evans"];
+    const datafiltrada=["Errol"];
+    expect(Calcular(dataCharacters,datafiltrada)).toEqual(33);
+  });
 });

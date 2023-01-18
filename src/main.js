@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { filterGender, filterHouse, sortBooks, ordercharacters} from './data.js';
+import { filterGender, filterHouse, sortBooks, ordercharacters, Calcular} from './data.js';
 // import data from './data/lol/lol.js';
 import data from './data/harrypotter/data.js';
 
@@ -135,3 +135,53 @@ const sortSelected = document.getElementById("Sort");
 sortSelected.addEventListener("change", function (){
   nameList.innerHTML = "";
   showbooks(sortBooks(dataBooks, sortSelected.value),sortBooks(covers, sortSelected.value))});
+
+//Calcular personajes
+document.getElementById("Statistics").addEventListener("click",function(){
+  showStatistics(dataCharacters,data);
+
+});
+function showStatistics(){
+  nameList.innerHTML="";
+  document.getElementById("filtrobooks").style.display="none";
+  document.getElementById("cajadefiltros").style.display="none";
+  document.getElementById("pantallapersonajes").style.display="none";
+  document.getElementById("cajaHome").style.display="none";
+
+  const divStatistics = document.createElement('div');
+  divStatistics.setAttribute("class","divStatistics");
+
+  const contar = filterGender(dataCharacters, "Female");
+  const contarmale = filterGender(dataCharacters, "Male");
+  const porcentajeMujer= Calcular(dataCharacters,contar);
+  const porcentajeHombre=Calcular(dataCharacters,contarmale);
+
+  const line = document.createElement('p');
+  const content = document.createTextNode("There are a total of " + dataCharacters.length + " characters, " +contar.length + " \nare female and " + contarmale.length + " are Male." );
+  const line2= document.createElement('p');
+  const content2=document.createTextNode("There are " + porcentajeHombre +" % Males" + " and there are " + porcentajeMujer +" % Females");
+
+  line.append(content); // para que aparezca lo creado
+  line2.append(content2);
+  divStatistics.append(line, line2);
+  nameList.append(divStatistics);
+
+
+
+}
+//Diseño responsive
+document.getElementById("btn-menu").addEventListener("click", mostrarmenu);
+document.getElementById("back-menu").addEventListener("click", ocultarmenu);
+const nav = document.getElementById("nav");
+const background_menu= document.getElementById("back-menu");
+
+function mostrarmenu(){
+  nav.style.right ="0px";
+  background_menu.style.display="block";
+
+}
+function ocultarmenu(){
+  nav.style.right ="-250px";
+  background_menu.style.display="none";
+
+}
