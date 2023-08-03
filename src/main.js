@@ -34,12 +34,31 @@ function showCharacters(data){
   document.getElementById("filtrobooks").style.display="none";
   nameList.innerHTML="";
 
+  let charactersBox="";
+  let divFrontCharacters="";
+  let nameCharacter="";
+  let divBackCharacter="";
+  let infoCharacter="";
+
   for(let i=0; i<data.length; i++){
     //console.log(ordercharacters);
-    const line = document.createElement('li');
-    const content = document.createTextNode( "Name: " + data[i].name + ", Date of birth: " + data[i].birth +  ", Specie :" + data[i].species +  ", House: " + data[i].house + ", Gender: " + data[i].gender);
-    line.appendChild(content); // para que aparezca lo creado
-    nameList.appendChild(line);
+    charactersBox =document.createElement('div');
+    charactersBox.setAttribute("class","booksBox");
+
+    divFrontCharacters = document.createElement('div');
+    divFrontCharacters.setAttribute("class","bookDesignFront");
+    nameCharacter = document.createElement('p');
+    nameCharacter.append(data[i].name);
+    divFrontCharacters.append(nameCharacter); // para que aparezca lo creado
+
+    divBackCharacter = document.createElement('div');
+    divBackCharacter.setAttribute("class","bookDesignBack");
+    infoCharacter = document.createElement('p');
+    infoCharacter.append("Hola");
+    divBackCharacter.append(infoCharacter); // para que aparezca lo creado
+
+    charactersBox.append(divFrontCharacters, divBackCharacter);
+    nameList.append(charactersBox);
     //console.log(content);
 
   }
