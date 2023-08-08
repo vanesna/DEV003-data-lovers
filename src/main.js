@@ -53,8 +53,8 @@ function showCharacters(data){
 
     divBackCharacter = document.createElement('div');
     divBackCharacter.setAttribute("class","bookDesignBack");
-    infoCharacter = document.createElement('p');
-    infoCharacter.append("Hola");
+    infoCharacter = document.createElement('p'); 
+    infoCharacter.append("Birth: " + data[i].birth + "\n Specie: " + data[i].species + " House: " + data[i].house + " Gender: " + data[i].gender);
     divBackCharacter.append(infoCharacter); // para que aparezca lo creado
 
     charactersBox.append(divFrontCharacters, divBackCharacter);
