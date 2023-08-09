@@ -203,15 +203,64 @@ button {
   text-align: center;
   font-family: cursive;
 }
-.characterscontenido {
-  font-family: cursive;
-  list-style-image: url(./imagenes/SOMBRERO1.png);
+
+/* -------------- Characters ---------------- */
+
+.charactersBox {
+  position: relative;
+  width: 180px;
+  height: 130px;
+  margin: 20px 0px 10px 30px;
+  float: left;
 }
+
+.charactersBox div {
+  position: absolute;
+  width:  100%;
+  height: 100%;
+  display: flex;
+  align-items:center;
+  justify-content: center;
+  border-radius: 5px;
+  backface-visibility: hidden;
+  transition: 2s;
+  align-content: space-around;
+  box-shadow: #dcd8c84d 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
+}
+
+.charactersBox .characterDesignFront {
+  background-color: #1E1E1E;
+  font-family: 'Harry Potter', sans-serif;
+  font-size: 1.2rem;
+  transform: perspective(500px) rotateY(0deg);
+}
+
+.charactersBox .characterDesignBack {
+  background-color: #1E1E1E;
+  font-size: 0.8rem;
+  transform: perspective(500px) rotateY(180deg);
+}
+
+.charactersBox:hover .characterDesignFront {
+  transform: perspective(500px) rotateY(180deg);
+}
+
+.charactersBox:hover .characterDesignBack {
+  transform: perspective(500px) rotateY(360deg);
+}
+
+.charactersBox p {
+  text-align: center;
+  /* font-size: 12px; */
+  padding: 15px;
+}
+
+/* -------------- Books ---------------- */
 
 .booksBox {
   position: relative;
   width: 210px;
-  height: 310px;
+  height: 310px; 
   margin: 20px;
   margin-left: 30px;
   float: left;

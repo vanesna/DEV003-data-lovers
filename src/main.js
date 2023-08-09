@@ -43,18 +43,18 @@ function showCharacters(data){
   for(let i=0; i<data.length; i++){
     //console.log(ordercharacters);
     charactersBox =document.createElement('div');
-    charactersBox.setAttribute("class","booksBox");
+    charactersBox.setAttribute("class","charactersBox");
 
     divFrontCharacters = document.createElement('div');
-    divFrontCharacters.setAttribute("class","bookDesignFront");
+    divFrontCharacters.setAttribute("class","characterDesignFront");
     nameCharacter = document.createElement('p');
     nameCharacter.append(data[i].name);
     divFrontCharacters.append(nameCharacter); // para que aparezca lo creado
 
     divBackCharacter = document.createElement('div');
-    divBackCharacter.setAttribute("class","bookDesignBack");
+    divBackCharacter.setAttribute("class","characterDesignBack");
     infoCharacter = document.createElement('p'); 
-    infoCharacter.append("Birth: " + data[i].birth + "\n Specie: " + data[i].species + " House: " + data[i].house + " Gender: " + data[i].gender);
+    infoCharacter.append("Birth: " + data[i].birth + " Specie: " + data[i].species + " House: " + data[i].house + " Gender: " + data[i].gender);
     divBackCharacter.append(infoCharacter); // para que aparezca lo creado
 
     charactersBox.append(divFrontCharacters, divBackCharacter);
